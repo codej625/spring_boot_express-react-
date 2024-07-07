@@ -1,0 +1,23 @@
+# Spring
+spring:
+  # Profile
+  profiles:
+    default: local
+
+  application:
+    name: app
+
+  # Devtools
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true
+
+# Logback
+logging:
+  # logback config 지정
+  config: classpath:./static/config/logback-spring.xml
+  file:
+    # 로그가 저장 되는 path 지정
+    path: logs
