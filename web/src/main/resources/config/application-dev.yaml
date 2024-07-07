@@ -1,0 +1,52 @@
+# Server
+server:
+
+  # Port
+  port: 8087
+
+  # Session
+  servlet:
+    session:
+      timeout: 20m
+
+# Spring
+spring:
+  # Profile
+  profiles:
+    config:
+      activate:
+        on-profile: dev
+
+  application:
+    name: web
+
+  # View
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html;charset=UTF-8
+
+  # Database
+  datasource:
+    url: jdbc:h2:mem:testdb  # H2 인메모리 데이터베이스 URL
+    driver-class-name: org.h2.Driver
+    username: sa  # 사용자 이름 (기본값)
+    password:   # 비밀번호 (기본값, 비어있음)
+  h2:
+    console:
+      enabled: true  # H2 콘솔 활성화 (옵션, 테스트 목적)
+
+  # Jpa
+  jpa:
+    open-in-view: false
+    hibernate:
+      # 스키마를 삭제하고 다시 생성한다.
+      # ddl-auto: create
+      # 스키마를 변경하지 않는다.
+      # ddl-auto: none
+      # 스키마를 변경된 엔티티에 맞게 업데이트한다.
+      ddl-auto: update
