@@ -9,12 +9,12 @@ public class SessionInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        HttpSession session = request.getSession(false); // 세션이 없으면 null 반환
-
-        if (session == null || session.getAttribute("user") == null) {
-            response.sendRedirect("/ncmik/index");
-            return false;
-        }
+//        HttpSession session = request.getSession(false); // 세션이 없으면 null 반환
+//
+//        if (session == null) {
+//            response.sendRedirect("/index");
+//            return false;
+//        }
 
         return true;
     }

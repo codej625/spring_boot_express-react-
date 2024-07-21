@@ -13,7 +13,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry.addInterceptor(new SessionInterceptor())
             .addPathPatterns("/**")
             .excludePathPatterns("/")
-            // .excludePathPatterns("/{path}/index")
             .excludePathPatterns("/config/**")
             .excludePathPatterns("/static/**")
             .excludePathPatterns("/config/**");
